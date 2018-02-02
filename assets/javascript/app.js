@@ -64,8 +64,9 @@ database.ref().on("child_added", function(childSnapshot) {
 	var minutesAway = frequency - remainder;
 	console.log("MINUTES TILL TRAIN: " + minutesAway);
 
-	var nextTrain = moment().add(minutesAway, "minutes");	
-	console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
+	var nextTrain = moment().add(minutesAway, "minutes").format("hh:mm");	
+	debugger;
+	console.log("ARRIVAL TIME: " + nextTrain);
 
 $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + destination + 
 	"</td><td>" + frequency + "</td><td>"  + nextTrain + "</td><td>" + minutesAway + "</td></tr>");
